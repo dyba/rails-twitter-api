@@ -42,4 +42,8 @@ gem 'mongoid', '~> 5.1.0'
 
 group :test, :development do
   gem 'minitest-rails', '~> 2.0'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'pry-byebug'
+  gem 'pry'
 end
