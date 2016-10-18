@@ -1,28 +1,41 @@
-== README
+# Rails Twitter API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+Here is the list of environment variables you'll need to set to get this application to work:
 
-* Ruby version
+<table>
+  <tr>
+    <td>Environment Variable</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>TWITTER_CONSUMER_SECRET</td>
+    <td>The consumer secret needed to access Twitter's API</td>
+  </tr>
+  <tr>
+    <td>TWITTER_CONSUMER_KEY</td>
+    <td>The consumer key needed to access Twitter's API</td>
+  </tr>
+</table>
 
-* System dependencies
+## System Requirements
 
-* Configuration
+<table>
+  <tr>
+    <td>Ruby version</td>
+    <td>2.3.0</td>
+  </tr>
+  <tr>
+    <td>MongoDB</td>
+    <td>3.2.10</td>
+  </tr>
+</table>
 
-* Database creation
+## Running Tests
 
-* Database initialization
+To run the tests:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```
+rake test
+```
