@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.twitter.com
+      Content-Type:
+      - application/x-www-form-urlencoded;charset=UTF-8
+      Authorization:
+      - Basic <BASE64_CREDENTIALS>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '151'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 18 Oct 2016 04:24:58 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Tue, 18 Oct 2016 04:24:58 GMT
+      Ml:
+      - S
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A147676469880202983; Domain=.twitter.com; Path=/; Expires=Thu,
+        18-Oct-2018 04:24:58 UTC
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - c38d159aba4796d543db0cb41afb2c8b
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Response-Time:
+      - '26'
+      X-Transaction:
+      - 00a3ab3000cdc42a
+      X-Tsa-Request-Body-Time:
+      - '1'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Ua-Compatible:
+      - IE=edge,chrome=1
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token_type":"bearer","access_token":"AAAAAAAAAAAAAAAAAAAAAG4lxgAAAAAAGAmRnmHaDoranwPpCCKT6PLW8XQ%3Dwus8RpCIhFwXb4NBRTK7GbNDu6xVTLPvRmnsW9rNTyd2N6jJhA"}'
+    http_version: 
+  recorded_at: Tue, 18 Oct 2016 04:24:58 GMT
+recorded_with: VCR 3.0.3
