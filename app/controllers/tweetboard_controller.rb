@@ -7,16 +7,21 @@ class TweetboardController < ApplicationController
 
       if user
         if user.expires_at > DateTime.now
-          user.statuses = twitter_user_statuses(params[:screen_name])
+          user.twitter_statuses = twitter_user_statuses(params[:screen_name])
           user.save
         end
 
-        @statuses = user.statuses.text
-      else
-        @statuses = twitter_user_statuses(params[:screen_name]).text
+        @statuses = user.statuses
       end
     else
       @statuses = []
+    end
+  rescue Mongoid::Errors::DocumentNotFound => e
+    if params[:screen_name].empty?
+    else
+      user = TwitterUser.create(screen_name: params[:screen_name])
+      statuses = twitter_user_statuses(params[:screen_name])
+      @statuses = statuses
     end
   end
 
@@ -24,6 +29,7 @@ class TweetboardController < ApplicationController
 
   def twitter_user_statuses(screen_name)
     tw_client = Twitter.client
+    tw_client.authorize
     tw_client.user_timeline screen_name: screen_name
   end
 end

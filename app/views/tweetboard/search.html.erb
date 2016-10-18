@@ -1,1 +1,9 @@
-Insert tweets here
+<%= form_tag "/search", method: :get do |form| %>
+    <%= label_tag :screen_name, "Search for twitter user:" %>
+    <%= text_field_tag :screen_name %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<% @statuses.each do |status| %>
+    <p><%= status %></p>
+<% end %>

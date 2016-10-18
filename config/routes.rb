@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'tweetboard#search'
+  get '/search', to: 'tweetboard#search'
 end

@@ -10,7 +10,11 @@ class TwitterUser
     end
   end
 
-  after_save do |document|
+  before_save do |document|
+    document.expires_at = DateTime.now + 5.minutes
+  end
+
+  before_create do |document|
     document.expires_at = DateTime.now + 5.minutes
   end
 end
